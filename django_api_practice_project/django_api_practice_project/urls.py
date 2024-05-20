@@ -18,6 +18,12 @@ Including another URLconf
 from django.urls import path, include
 from rest_framework import routers
 
-urlpatterns = [
+from django_api_practice_app.views import *
 
+router = routers.DefaultRouter()
+
+router.register(r'students', StudentViewSet)
+
+urlpatterns = [
+    path('', include(router.urls))
 ]
