@@ -23,7 +23,33 @@ from django_api_practice_app.views import *
 router = routers.DefaultRouter()
 
 router.register(r'students', StudentViewSet)
+router.register(r'courses', CourseViewSet)
+router.register(r'instructors', InstructorViewSet)
+router.register(r'grades', GradeViewSet)
 
 urlpatterns = [
     path('', include(router.urls))
 ]
+
+'''
+    GET
+    https://the-name-of-my-website/students/
+    reads a list of all students
+
+    GET
+    /students/{id}
+    reads a specific student with that id
+
+    POST
+    /students/
+    creates a new student
+
+    PUT
+    /studens/{id}
+    update the student with that id
+
+    
+    DELETE
+    /students/{id}
+    deletes the student with that id
+'''
